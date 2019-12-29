@@ -7,8 +7,8 @@
 数据介绍：数据总共3731张，其中线上测试数据为1000张
 
 ![image](https://github.com/jackcywang/Xian-Huawei-Al-competion/raw/master/dataset/data_analyse/train_data.png)
-从图中可以看数据很少，且类别不均衡
-数据扩充，从百度爬取了一万多张图片，使用伪标签法（Pseudo label)来扩充图片，阈值选择为97，将预测结果大于97的数据加入到训练数据中
+从图中可以看数据很少，且类别不均衡  
+数据扩充，从百度爬取了一万多张图片，使用伪标签法（Pseudo label)来扩充图片，使用训练好的模型来预测，阈值选择为97，将预测结果大于97的数据加入到训练数据中
 
 模型选择  
 densenet201  
@@ -24,10 +24,11 @@ efficientnet_b4 97.5
 
 训练技巧  
 数据增强部分：
-1.随机裁剪 random crop 
+1.随机裁剪 randomresizedcrop 
 2.随机擦除 random erase
 3.mixup
-4.水平翻转  
+4.水平翻转 
+5。归一化
 训练策略：  
 学习率使用warmup+CosineAnnealingLR  
 采用多尺度训练，分为三段式，图像大小依次递增  
