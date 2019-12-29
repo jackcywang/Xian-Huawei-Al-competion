@@ -63,13 +63,13 @@ class Multi_scale(Dataset):
         self.mode = mode
         if epoch < args.multi_milestone[0]:
             args.imgsize = args.multi_size[0]
-            args.batch_size = args.batch_size
+            args.batch_size = 48
         elif epoch < args.multi_milestone[1]:
-            args.imgsize = args.multi_size[1]
+            args.imgsize = 24
             args.batch_size = args.batch_size/2
-        else: 
+        elif epoch < args.total_epoch
             args.imgsize = args.multi_size[2]
-            args.batch_size = args.batch_size/4
+            args.batch_size = 12
 
         if self.mode == 'train':
             self.transform = transforms.Compose(
