@@ -104,7 +104,7 @@ def train_model(args):
             model = nn.DataParallel(model)
             parallel = True
 
-    optimizer = optim.SGD(,lr=args.lr,momentum=0.9, nesterov=args.nesterov, weight_decay=args.weight_decay)
+    optimizer = optim.SGD(model.parameters(),lr=args.lr,momentum=0.9, nesterov=args.nesterov, weight_decay=args.weight_decay)
     #Split_data and Train
     train_imgs_path,train_labels,samples_each_class = get_data(args,'train')
     val_imgs_path,val_labels,_ = get_data(args,'val')
