@@ -131,7 +131,8 @@ def train_model(args):
     # training
     best_acc = 0
     
-    for epoch in range(0,args.normal_epoch+args.warmup_epoch):
+    args.total_epoch = args.pre_epoch+args.warmup_epoch+args.normal_epoch
+    for epoch in range(0,args.total_epoch):
 
         model.train()
         loss_sum = 0.0
