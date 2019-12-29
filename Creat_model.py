@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 from torchvision.models import densenet201,resnet50,resnet18,resnet34,resnet101,densenet121,densenet161,densenet169
 from efficientnet_pytorch import EfficientNet
-from layer import *
+
 def create_model(args):
     model = None
     if args.model_name == 'densenet201':
