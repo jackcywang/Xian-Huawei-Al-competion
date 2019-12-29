@@ -232,7 +232,7 @@ def plot_confusion_matrix(cm, labels):
 
 if __name__ == '__main__':
     args = parse_args()
-    args.data_val = './datasets/data2/val'
+    args.data_val = './datasets/data/val'
     args.num_classes=54
     args.imgsize = 224
     # infer_Pseudo(args)
