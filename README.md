@@ -28,13 +28,13 @@ efficientnet_b4 97.5
 2.随机擦除 random erase
 3.mixup
 4.水平翻转 
-5。归一化
+5.归一化  
 训练策略：  
 学习率使用warmup+CosineAnnealingLR  
 采用多尺度训练，分为三段式，图像大小依次递增  
 优化器： sgd   
 损失函数：  
-SmoothCrossEntropy+mixup_loss 
+SmoothCrossEntropyloss+mixup_loss 
 
 涨分点：加大图片分辨率，标签平滑(能抑制过拟合)，mixup(在数据上进行正则)，随机擦除，多尺度训练(增加的模型的泛化能力)，数据清洗（数据是最重要的，一个好的数据集意味着你的起点比别人高很多）  
 
